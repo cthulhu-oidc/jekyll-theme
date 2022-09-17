@@ -1,5 +1,19 @@
 title: cthulhu-oidc theme
 description:
-show_downloads: true
 google_analytics:
 theme: jekyll-theme-cthulhu-oidc
+
+markdown: kramdown
+highlighter: rouge
+
+organization:
+  url: https://github.com/cthulhu-oidc"
+  twitter: https://twitter.com/cthulhu_oidc_js
+
+package:
+  name: '@cthulhu/core'
+  description: Fast and low overhead oidc provider
+  url: https://www.cthulhu-oidc.dev
+  repository:
+    url: https://github.com/cthulhu-oidc/core
+  license: MIT
