@@ -1,7 +1,7 @@
 <nav id="main-navbar" class="navbar">
   <div class="navbar-brand">
     <a class="navbar-item" href="/">
-      <img src="/{{ 'assets/images/cthulhu-logo-menu.png' }}" alt="cthulhu oidc: Fast and low overhead oidc provider" height="28">
+      <img src="/{{ 'assets/images/cthulhu-logo-menu.png' }}" alt="{{ site.package.description }}" height="28">
     </a>
 
     <a class="navbar-item is-hidden-desktop" href="{{ site.package.repository.url }}" target="_blank" rel="noopener">
@@ -20,12 +20,11 @@
   <div class="navbar-menu" id="mobileMenu">
     <div class="navbar-start">
       <a class="navbar-item " href="/">Home</a>
-      <a class="navbar-item " href="/docs">Docs</a>
+      <a class="navbar-item " href="/documentation">Documentation</a>
     </div>
 
     <div class="navbar-end">
-      <span id="algolia-search-input" class="control has-icons-left navbar-item">
-      </span>
+      {% include search.html %}
 
       <a class="navbar-item" href="{{ site.organization.url }}" target="_blank" rel="noopener">
         <span class="fa fa-github"> </span>&nbsp;GitHub

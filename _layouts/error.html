@@ -5,7 +5,7 @@
 <body>
   {% include navigation.html %}
   <main class="page-content" aria-label="Content">
-    {% include hero.html %}
+    {% include hero-primary.html %}
     <section class="section">
       <div class="container content">
         {{ content }}
@@ -13,9 +13,7 @@
       </div>
     </section>
   </main>
-  <footer>
-    {% include footer.html %}
-  </footer>
+  {% include footer.html %}
 </body>
 
 </html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="{{ site.lang | default: " en-US" }}">
+{% include head.html %}
+
+<body>
+  {% include navigation.html %}
+  <main class="page-content" aria-label="Content">
+    {% include hero-primary.html %}
+    <section class="section">
+      <div class="container">
+        <div class="columns">
+          <div class="column is-3 is-hidden-mobile sticky-container">
+            <aside class="menu sticky" id="toc">
+              <ul class="menu-list"></ul>
+              <p class="menu-label"><a href="/documentation">Documentation</a></p>
+              <ul class="menu-list">
+                {% for doc in site.docs %}
+                <li style="text-transform: capitalize">
+                  <a title="{{ doc.title | escape }}" href="{{ site.baseurl }}{{ doc.url }}">{{ doc.title | escape }}</a>
+                </li>
+                {% endfor %}
+              </ul>
+            </aside>
+          </div>
+          <div class="column is-9">
+            <nav class="breadcrumb">
+              <ul>
+                <li><a href="/" style="padding-left: 0">{{ site.package.name }}</a></li>
+                <li><a href="/documentation">Documentation</a></li>
+                <div class="field">
+                  <div class="control">
+                    <div class="select"><select onchange="if (this.value) window.location.href=this.value"
+                        style="border: none;">
+                        {% for doc in site.docs %}
+                        <option
+                          value="{{ doc.url }}"
+                          {% if doc.url == page.url %}selected{% endif %}
+                        >{{ doc.title | escape }}
+                        </option>
+                        {% endfor %}
+                      </select></div>
+                  </div>
+                </div>
+              </ul>
+            </nav>
+            {{ content }}
+          </div>
+        </div>
+
+      </div>
+    </section>
+  </main>
+  {% include footer.html %}
+</body>
+
+</html>

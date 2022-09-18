@@ -6,6 +6,11 @@ theme: jekyll-theme-cthulhu-oidc
 markdown: kramdown
 highlighter: rouge
 
+collections:
+  docs:
+    output: true
+    permalink: /documentation/:name
+
 organization:
   url: https://github.com/cthulhu-oidc"
   twitter: https://twitter.com/cthulhu_oidc_js

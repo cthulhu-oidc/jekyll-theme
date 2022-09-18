@@ -1,0 +1,27 @@
+<span id="search-input" class="control has-icons-left navbar-item">
+  <div id="search-bar">
+    <i class="fa fa-search" aria-hidden="true"></i>
+    <input id="search" type="text" autocomplete="off" placeholder="Search..." />
+    <div id="search-result"></div>
+  </div>
+</span>
+
+<script>
+  var sjs = SimpleJekyllSearch({
+    searchInput: document.getElementById('search'),
+    resultsContainer: document.getElementById('search-result'),
+    json: '/assets/search.json',
+    searchResultTemplate: '<a class="result-item" href="{url}"><div class="title">{title}</div></a>'
+  });
+  document.querySelector('#search').addEventListener('keyup', function () {
+    var keyword = this.value.toLowerCase();
+
+    sjs.search(keyword);
+
+    if (keyword.length !== 0) {
+      document.querySelector('#search-result').style.display = 'block';
+    } else {
+      document.querySelector('#search-result').style.display = 'none';
+    }
+  });
+</script>
