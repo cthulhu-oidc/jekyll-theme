@@ -20,7 +20,9 @@
   <div class="navbar-menu" id="mobileMenu">
     <div class="navbar-start">
       <a class="navbar-item " href="/">Home</a>
+      {% if site.docs.size != 0 %}
       <a class="navbar-item " href="/documentation">Documentation</a>
+      {% endif %}
     </div>
 
     <div class="navbar-end">
